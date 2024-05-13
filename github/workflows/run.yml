@@ -1,0 +1,16 @@
+name: Welcome to CI/CD
+
+on:
+  pull_request:
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-request: write
+      steps:
+        -./gradlew test
+      with:
+        message:
+          Hello
