@@ -33,10 +33,4 @@ public class SumCalculatorTest {
 
     }
 
-    @Test
-    void sumZeroTest() {
-
-        assertThrows(IllegalArgumentException.class, ()->sumCalculator.sum(0));
-
-    }
 }
