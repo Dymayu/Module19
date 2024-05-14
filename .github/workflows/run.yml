@@ -1,4 +1,4 @@
-name: Welcome to CI/CD
+name: example
 
 on:
   pull_request:
@@ -8,9 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-      
-  steps:
-    -./gradlew test
-    with:
-      message:
-          Hello
+    steps:
+      - uses: ./gradlew test
+        with:
+          message:
+              Hello World!
