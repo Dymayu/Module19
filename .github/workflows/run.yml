@@ -2,6 +2,8 @@ name: example
 
 on:
   pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -9,7 +11,10 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: ./gradlew test
-        with:
-          message:
-              Hello World!
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests with Gradle
+        run: ./gradlew test
+        env:
+          MESSAGE: Hello World!
